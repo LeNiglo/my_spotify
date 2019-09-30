@@ -1,0 +1,45 @@
+@import "../../_variables";
+
+.sidebar {
+  background-color: $sidebar-background-color;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  bottom: $footer-sm-height;
+  width: $sidebar-sm-width;
+
+  @media (min-width: $breakpoint-md) {
+    bottom: $footer-md-height;
+    width: $sidebar-md-width;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    bottom: $footer-lg-height;
+    width: $sidebar-lg-width;
+  }
+
+  .genres {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+
+    a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 7px;
+      color: $sidebar-color;
+      text-decoration: none;
+      transition: background-color .5s ease-in-out, color .5s ease-in-out;
+
+      &:hover,
+      &:active {
+        color: lighten($sidebar-color, 50%);
+        background-color: rgba(0,0,0,.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import './_variables';
+
+.wrapper {
+  background-color: $wrapper-background-color;
+  position: absolute;
+  right: 0;
+  padding: 15px;
+  overflow-y: scroll;
+
+  top: $header-sm-height;
+  bottom: $footer-sm-height;
+  left: $sidebar-sm-width;
+
+  @media (min-width: $breakpoint-md) {
+    top: $header-md-height;
+    bottom: $footer-md-height;
+    left: $sidebar-md-width;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    top: $header-lg-height;
+    bottom: $footer-lg-height;
+    left: $sidebar-lg-width;
+  }
+}
+
+h1.site-title {
+  text-transform: uppercase;
+  font-weight: 100;
+  position: relative;
+  padding-bottom: 14px;
+
+  &:after {
+    content: '';
+    width: 3em;
+    position: absolute;
+    border-bottom: 4px solid #000000;
+    bottom: 0;
+    left: 0;
+  }
+}

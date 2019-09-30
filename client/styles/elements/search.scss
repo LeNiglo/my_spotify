@@ -1,0 +1,14 @@
+@import "../_variables";
+
+.search {
+  margin: 10px;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    width: 15em;
+  }
+}

@@ -1,0 +1,49 @@
+@import "../_variables";
+
+.album {
+  display: block;
+  text-decoration: none;
+  width: calc(50% - 14px);
+  margin: 7px;
+
+  @media (min-width: $breakpoint-md) {
+    width: calc(33.33333% - 14px);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    width: calc(25% - 14px);
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .album-name {
+    font-size: 1.1em;
+    color: lighten(#000000, 30%);
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  .album-description {
+    position: relative;
+    height: 3.3em;
+    overflow: hidden;
+    line-height: 1.1em;
+    font-size: 0.8em;
+
+    &:after {
+      content: "";
+      text-align: right;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 1.1em;
+      background: linear-gradient(to right, transparentize($wrapper-background-color, 1), $wrapper-background-color 50%);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import "./_variables";
+
+footer {
+  background-color: #607080;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  height: $footer-sm-height;
+
+  @media (min-width: $breakpoint-md) {
+    height: $footer-md-height;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    height: $footer-lg-height;
+  }
+}

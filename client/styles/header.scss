@@ -1,0 +1,28 @@
+@import "./_variables";
+
+header {
+  background-color: #657585;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+
+  height: $header-sm-height;
+  left: $sidebar-sm-width;
+
+  @media (min-width: $breakpoint-md) {
+    height: $header-md-height;
+    left: $sidebar-md-width;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    height: $header-lg-height;
+    left: $sidebar-lg-width;
+  }
+
+  .home-link {
+    line-height: 50px;
+    padding: 0 20px;    
+  }
+}

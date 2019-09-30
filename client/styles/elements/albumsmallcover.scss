@@ -1,0 +1,51 @@
+@import "../_variables";
+
+.album-cover {
+  position: relative;
+
+  .album-cover-img {
+    display: block;
+    margin: auto;
+    background-color: #aaaaaa;
+    width: 100%;
+    height: auto;
+  }
+
+  .album-cover-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparentize(#000000, .5);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: none;
+
+    .album-cover-overlay-play {
+      display: block;
+      border-radius: 100%;
+      background: none;
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      outline: none;
+      box-shadow: none;
+      height: 2em;
+      width: 2em;
+      font-size: 2em;
+
+      &:active,
+      &:hover {
+        background-color: lighten(#000000, 10%);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &:hover {
+    .album-cover-overlay {
+      display: flex;
+    }
+  }
+}
