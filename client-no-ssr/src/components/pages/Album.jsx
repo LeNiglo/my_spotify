@@ -12,7 +12,7 @@ const Album = props => {
       setAlbum(json)
     }
     loadAlbum()
-  }, [])
+  }, [props])
 
   return (
     <React.Fragment>
@@ -21,6 +21,7 @@ const Album = props => {
       <table className='track-list'>
         <thead>
           <tr>
+            <th></th>
             <th>N°</th>
             <th>Title</th>
             <th>Duration</th>

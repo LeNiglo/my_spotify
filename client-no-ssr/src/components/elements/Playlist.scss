@@ -1,0 +1,20 @@
+@import '../../variables';
+
+.playlist {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: $footer-sm-height;
+    background-color: $wrapper-color;
+    color: $wrapper-background-color;
+
+    @media (min-width: $breakpoint-md) {
+        bottom: $footer-md-height;
+    }
+    @media (min-width: $breakpoint-md) {
+        bottom: $footer-md-height;
+    }
+
+}

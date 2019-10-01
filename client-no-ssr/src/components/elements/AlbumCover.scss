@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.album-cover {
+  position: relative;
+
+  .album-cover-picture {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      display: block;
+  }
+
+  .album-cover-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparentize($color: #000000, $amount: 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover {
+    .album-cover-overlay {
+      display: flex;
+    }
+  }
+}

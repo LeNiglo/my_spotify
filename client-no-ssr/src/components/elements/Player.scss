@@ -1,0 +1,25 @@
+@import '../../variables';
+
+.playlist-row {
+    display: flex;
+    flex-direction: row;
+    height: $footer-sm-height - 40px;
+
+    @media (min-width: $breakpoint-md) {
+        height: $footer-md-height - 40px;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        height: $footer-lg-height - 40px;
+    }
+
+    .playlist-toggle {
+        flex: 2;
+    }
+}
+
+audio#player {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

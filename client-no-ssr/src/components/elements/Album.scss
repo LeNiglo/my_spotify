@@ -1,8 +1,8 @@
-@import '../../_variables';
+@import "../../_variables";
 
 .album-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-wrap: wrap;
 
   .album {
@@ -48,7 +48,11 @@
         right: 0;
         width: 50%;
         height: 1.1em;
-        background: linear-gradient(to right, transparentize($wrapper-background-color, 1), $wrapper-background-color 50%);
+        background: linear-gradient(
+          to right,
+          transparentize($wrapper-background-color, 1),
+          $wrapper-background-color 50%
+        );
       }
     }
   }

@@ -9,12 +9,10 @@ const Genre = props => {
     const loadGenre = async () => {
       const res = await fetch(`http://localhost:8000/api/genres/${props.match.params.genreId}`)
       const json = await res.json()
-      // TODO remove this hack
-      json.albums.length = 10
       setGenre(json)
     }
     loadGenre()
-  }, [])
+  }, [props])
 
   return (
     <React.Fragment>

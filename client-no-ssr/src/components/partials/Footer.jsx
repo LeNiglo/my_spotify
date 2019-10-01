@@ -1,10 +1,14 @@
 import React from 'react'
 
+import Player from '../elements/Player'
+
 import './Footer.scss'
 
 const Footer = props => {
   return (
-    <footer></footer>
+    <footer>
+      <Player />
+    </footer>
   )
 }
 
