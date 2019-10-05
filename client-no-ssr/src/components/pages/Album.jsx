@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+import AlbumCover from '../elements/AlbumCover'
 import Track from '../elements/Track'
 
 const Album = props => {
@@ -16,6 +17,7 @@ const Album = props => {
 
   return (
     <React.Fragment>
+      <AlbumCover full={false} album={album} />
       <h1 className='site-title'>{album.name}</h1>
 
       <table className='track-list'>

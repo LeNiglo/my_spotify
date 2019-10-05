@@ -24,7 +24,7 @@ const App = props => {
               <Route path="/genre/:genreId" component={Genre} />
               <Route path="/album/:albumId" component={Album} />
               <Route path="/artist/:artistId" component={Artist} />
-              <Route path="/" exact component={Index} />
+              <Route component={Index} />
             </Switch>
           </div>
           <Footer />

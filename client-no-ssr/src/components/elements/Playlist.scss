@@ -6,6 +6,7 @@
     top: 0;
     right: 0;
     left: 0;
+    overflow-x: scroll;
     bottom: $footer-sm-height;
     background-color: $wrapper-color;
     color: $wrapper-background-color;
@@ -17,4 +18,22 @@
         bottom: $footer-md-height;
     }
 
+    & > table {
+        width: 100%;
+
+        th,
+        td {
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        tr.current-track {
+            th,
+            td {
+                color: $wrapper-color;
+                background-color: $wrapper-background-color
+            }
+        }
+    }
 }

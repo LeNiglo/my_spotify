@@ -15,7 +15,7 @@ class ArtistController extends Controller
 
     public function show(Artist $artist)
     {
-        $artist->load('albums', 'albums.tracks', 'albums.genres');
+        $artist->load('albums', 'albums.tracks', 'albums.genres', 'albums.tracks.album', 'albums.tracks.album.artist');
         return $artist;
     }
 }

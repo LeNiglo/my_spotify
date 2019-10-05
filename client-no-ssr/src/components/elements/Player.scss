@@ -3,14 +3,14 @@
 .playlist-row {
     display: flex;
     flex-direction: row;
-    height: $footer-sm-height - 40px;
+    height: $footer-sm-height - $player-height;
 
     @media (min-width: $breakpoint-md) {
-        height: $footer-md-height - 40px;
+        height: $footer-md-height - $player-height;
     }
 
     @media (min-width: $breakpoint-lg) {
-        height: $footer-lg-height - 40px;
+        height: $footer-lg-height - $player-height;
     }
 
     .playlist-toggle {
@@ -18,8 +18,18 @@
     }
 }
 
-audio#player {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+.player-row {
+    height: $player-height;
+    display: flex;
+
+    .player-media {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .player-controls {
+            
+        }
+    }
 }

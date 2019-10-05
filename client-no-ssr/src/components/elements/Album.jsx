@@ -9,7 +9,7 @@ const Album = props => {
   const { album } = props
   return (
     <div className='album'>
-      <AlbumCover album={album} />
+      <AlbumCover full={true} album={album} />
       <Link to={`/album/${album.id}`}>
           <h3 className='album-name'>{album.name}</h3>
           <p className='album-description'>{album.description}</p>

@@ -1,9 +1,10 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { utils } from 'react-media-player'
 
 import './Track.scss'
 
 const Track = props => {
+  const { formatTime } = utils
   const { track } = props
 
   const handleClick = event => {
@@ -18,7 +19,7 @@ const Track = props => {
       </td>
       <td>{track.track_no}</td>
       <td>{track.name}</td>
-      <td>{track.duration}</td>
+      <td>{formatTime(track.duration)}</td>
     </tr>
   )
 }

@@ -4,7 +4,7 @@
   background-color: $wrapper-background-color;
   position: absolute;
   right: 0;
-  padding: 15px;
+  padding: $wrapper-padding;
   overflow-y: scroll;
 
   top: $header-sm-height;
@@ -28,7 +28,7 @@ h1.site-title {
   text-transform: uppercase;
   font-weight: 100;
   position: relative;
-  padding-bottom: 14px;
+  padding-bottom: $wrapper-padding;
 
   &:after {
     content: '';
