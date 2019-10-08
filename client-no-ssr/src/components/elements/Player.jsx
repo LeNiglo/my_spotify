@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Player as AudioPlayer, Media, controls } from 'react-media-player'
+import { Player as AudioPlayer, Media, controls, utils } from 'react-media-player'
 
 import Playlist from './Playlist'
 
@@ -14,6 +14,7 @@ const Player = props => {
         Duration,
         Volume,
     } = controls
+    const { formatTime } = utils
 
     const [playlist, setPlaylist] = useState([])
     const [playlistShown, setPlaylistShown] = useState(false)
@@ -23,8 +24,9 @@ const Player = props => {
     useEffect(() => {
         const initPlayer = () => {
             window.player = {
-                addToPlaylist: tracks => {
-                    setPlaylist(prev => [...prev, ...tracks])
+                playAlbum: tracks => {
+                    setPlaylist([...tracks])
+                    setActiveIndex(0)
                 },
                 playTrack: track => {
                     setPlaylist([track])
@@ -41,7 +43,7 @@ const Player = props => {
     }
 
     const handlePlaylistSelect = event => {
-        setActiveIndex(event.target.getAttribute('data-index'))
+        setActiveIndex(parseInt(event.target.getAttribute('data-index')))
     }
 
     const handlePrev = event => {
@@ -68,12 +70,17 @@ const Player = props => {
                             vendor={'audio'}
                             autoPlay={true}
                             useAudioObject={true}
-                            onEnded={handleNext} />
+                            onEnded={handleNext}
+                            onTimeUpdate={media => {
+                              if (media.currentTime >= playlist[activeIndex].duration) {
+                                handleNext()
+                              }
+                            }} />
                         <div className='player-controls'>
                             <PlayPause className="player-control player-control--play-pause" />
                             <CurrentTime className="player-control player-control--current-time" />
                             <SeekBar className="player-control player-control--time-range" />
-                            <Duration className="player-control player-control--duration" />
+                            <span>{!playlist[activeIndex] ? '0:00' : formatTime(playlist[activeIndex].duration)}</span>
                             <MuteUnmute className="player-control player-control--mute-unmute" />
                             <Volume className="player-control player-control--volume" />
                         </div>

@@ -6,7 +6,7 @@ const AlbumCover = props => {
     const { album, full } = props
 
     const handleClick = event => {
-        window.player.addToPlaylist(album.tracks)
+        window.player.playAlbum(album.tracks)
     }
 
     return (
