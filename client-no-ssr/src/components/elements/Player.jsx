@@ -11,7 +11,6 @@ const Player = props => {
         MuteUnmute,
         CurrentTime,
         SeekBar,
-        Duration,
         Volume,
     } = controls
     const { formatTime } = utils
